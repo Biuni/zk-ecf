@@ -1,0 +1,39 @@
+{
+  "_format": "hh3-sol-build-info-1",
+  "id": "solc-0_8_20-21587cea80810f24a5c36e39d24524ff84c54fc4",
+  "solcVersion": "0.8.20",
+  "solcLongVersion": "0.8.20+commit.a1b79de6",
+  "userSourceNameMap": {
+    "contracts/Coordinator.sol": "project/contracts/Coordinator.sol"
+  },
+  "input": {
+    "language": "Solidity",
+    "settings": {
+      "evmVersion": "shanghai",
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "outputSelection": {
+        "*": {
+          "": [
+            "ast"
+          ],
+          "*": [
+            "abi",
+            "evm.bytecode",
+            "evm.deployedBytecode",
+            "evm.methodIdentifiers",
+            "metadata"
+          ]
+        }
+      },
+      "remappings": []
+    },
+    "sources": {
+      "project/contracts/Coordinator.sol": {
+        "content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.20;\n\n/// @dev Interfaccia minima del ProofManager usata dal Coordinator.\ninterface IProofManager {\n    function getProofIfExists(bytes32 infoHash)\n        external\n        view\n        returns (bool exists, bytes32 proofHash);\n}\n\n/// @title Coordinator per zk-oracle prototype\n/// @notice Riceve richieste dal client, interroga il ProofManager\n///         e coordina la restituzione dei risultati.\ncontract Coordinator {\n    enum Status {\n        None,\n        Pending,\n        ProofFound,\n        Error\n    }\n\n    struct VerificationRequest {\n        address requester;   // chi ha richiesto la verifica (client)\n        bytes32 infoHash;    // identificatore della \"conformità\" da verificare\n        Status status;\n        bytes32 proofHash;   // riferimento alla prova (hash, id, ecc.)\n        string error;        // eventuale motivo di errore\n    }\n\n    /// @notice Indirizzo del ProofManager\n    address public proofManager;\n\n    /// @dev contatore per assegnare ID univoci alle richieste\n    uint256 public nextRequestId;\n\n    /// @dev mappatura requestId -> struct di richiesta\n    mapping(uint256 => VerificationRequest) public requests;\n\n    /// @notice Emesso quando una nuova richiesta viene aperta\n    event VerificationRequested(\n        uint256 indexed requestId,\n        address indexed requester,\n        bytes32 infoHash\n    );\n\n    /// @notice Emesso quando una prova viene trovata (o recuperata)\n    event ProofFound(\n        uint256 indexed requestId,\n        bytes32 proofHash\n    );\n\n    /// @notice Emesso in caso di errore nel processo di verifica\n    event VerificationError(\n        uint256 indexed requestId,\n        string reason\n    );\n\n    modifier onlyProofManager() {\n        require(msg.sender == proofManager, \"Coordinator: not ProofManager\");\n        _;\n    }\n\n    constructor(address _proofManager) {\n        require(_proofManager != address(0), \"Coordinator: zero address\");\n        proofManager = _proofManager;\n    }\n\n    /// @notice Il client richiede una verifica per una certa infoHash\n    /// @param infoHash identificatore (es. hash dei parametri di conformita')\n    /// @return requestId ID univoco della richiesta\n    function requestVerification(bytes32 infoHash)\n        external\n        returns (uint256 requestId)\n    {\n        requestId = nextRequestId++;\n\n        VerificationRequest storage req = requests[requestId];\n        req.requester = msg.sender;\n        req.infoHash = infoHash;\n        req.status = Status.Pending;\n\n        emit VerificationRequested(requestId, msg.sender, infoHash);\n\n        // 1) Controllo sincrono se la prova esiste gia'\n        (bool exists, bytes32 proofHash) =\n            IProofManager(proofManager).getProofIfExists(infoHash);\n\n        if (exists) {\n            // Caso \"La prova e' stata gia' generata\"\n            req.status = Status.ProofFound;\n            req.proofHash = proofHash;\n\n            emit ProofFound(requestId, proofHash);\n            // In questo caso l'oracolo non deve fare nulla:\n            // il client puo' gia' leggere il risultato.\n        }\n\n        // 2) Se non esiste, la richiesta resta Pending:\n        // l'oracolo off-chain ascoltera' l'evento VerificationRequested\n        // e iniziera' il processo di generazione della prova.\n    }\n\n    /// @notice Chiamata dal ProofManager quando la prova e' disponibile\n    /// @param requestId ID della richiesta a cui associare la prova\n    /// @param proofHash riferimento alla prova (hash)\n    function notifyProof(uint256 requestId, bytes32 proofHash)\n        external\n        onlyProofManager\n    {\n        VerificationRequest storage req = requests[requestId];\n        require(req.status == Status.Pending, \"Coordinator: not pending\");\n\n        req.status = Status.ProofFound;\n        req.proofHash = proofHash;\n\n        emit ProofFound(requestId, proofHash);\n    }\n\n    /// @notice Chiamata dal ProofManager in caso di errore nella verifica\n    /// @param requestId ID della richiesta\n    /// @param reason testo da usare come motivo di errore\n    function notifyError(uint256 requestId, string calldata reason)\n        external\n        onlyProofManager\n    {\n        VerificationRequest storage req = requests[requestId];\n        require(req.status == Status.Pending, \"Coordinator: not pending\");\n\n        req.status = Status.Error;\n        req.error = reason;\n\n        emit VerificationError(requestId, reason);\n    }\n\n    /// @notice Restituisce tutti i dettagli di una richiesta\n    function getRequest(uint256 requestId)\n        external\n        view\n        returns (\n            address requester,\n            bytes32 infoHash,\n            Status status,\n            bytes32 proofHash,\n            string memory error\n        )\n    {\n        VerificationRequest storage req = requests[requestId];\n        return (req.requester, req.infoHash, req.status, req.proofHash, req.error);\n    }\n}\n\n"
+      }
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "ZkOracleDeployment#FuelUseVerifier": "0x6a8a108000942d7338ab60EcdF3Fb0C7E9679792",
+  "ZkOracleDeployment#ProofManager": "0x5d55bcce1C87d70F2D0675094a6d90c4e77331cf",
+  "ZkOracleDeployment#Coordinator": "0xd150911250A9CA9CA0c76F9DE417d85923ca8a78",
+  "ZkOracleDeployment#VerifierAdapter": "0x79Ae42A9da165D13778efBA57dcC4a620A48E1B8"
+}
