@@ -83,6 +83,7 @@ echo "==============================================="
 # === LAYER 1 ===
 echo "🚛 Exporting LAYER 1 (Transport)..."
 
-snarkjs zkey export solidityverifier builds/L1/FuelUse_final.zkey ../on-chain/verifiers/FuelUseVerifier.sol
+snarkjs zkey export solidityverifier builds/L1/FuelUse_final.zkey ../on-chain/contracts/FuelUseVerifier.sol
+perl -0pi -e 's/contract Groth16Verifier/contract FuelUseVerifier/' ../on-chain/contracts/FuelUseVerifier.sol
 snarkjs zkey export solidityverifier builds/L1/PM10_final.zkey ../on-chain/verifiers/PM10Verifier.sol
 snarkjs zkey export solidityverifier builds/L1/CO2eq_final.zkey ../on-chain/verifiers/CO2eqVerifier.sol
