@@ -1,0 +1,68 @@
+{
+  "timestamp": "2026-07-13T13:37:57.543Z",
+  "cwd": "/Users/biuni/Desktop/Università/Ricerca/zk Oracles/zk-ecf",
+  "node": "v24.9.0",
+  "platform": "darwin",
+  "arch": "arm64",
+  "os": {
+    "type": "Darwin",
+    "release": "24.6.0",
+    "cpus": 10,
+    "cpuModel": "Apple M1 Pro",
+    "totalMemoryBytes": 17179869184
+  },
+  "git": {
+    "commit": "800cd5f4ca889d0cc30cc602013b69447299fe40",
+    "statusShort": "M on-chain/contracts/FuelUseVerifier.sol\n?? benchmarks/"
+  },
+  "packages": {
+    "offchain": {
+      "circomlib": "^2.0.5",
+      "dotenv": "^17.2.3",
+      "ethers": "^6.15.0",
+      "snarkjs": "^0.7.5",
+      "web3": "^4.16.0"
+    },
+    "onchain": {
+      "@nomicfoundation/hardhat-ignition": "^3.0.3",
+      "@nomicfoundation/hardhat-keystore": "^3.0.1",
+      "@nomicfoundation/hardhat-toolbox-viem": "^5.0.0",
+      "@types/node": "^22.18.8",
+      "dotenv": "^17.2.3",
+      "forge-std": "github:foundry-rs/forge-std#v1.9.4",
+      "hardhat": "^3.0.6",
+      "typescript": "~5.8.0",
+      "viem": "^2.37.9"
+    }
+  },
+  "config": {
+    "repetitions": 8,
+    "pipelineSizes": [
+      1,
+      2,
+      4,
+      8
+    ],
+    "pipelineRepeats": 3,
+    "concurrencyLevels": [
+      1,
+      2,
+      4
+    ],
+    "concurrencyPipelines": 6,
+    "aggregationSizes": [
+      1,
+      2,
+      4,
+      8,
+      16,
+      32,
+      64,
+      128,
+      256,
+      512,
+      1024
+    ],
+    "reuseRequests": 10000
+  }
+}

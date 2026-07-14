@@ -1,0 +1,2030 @@
+{
+  "environment": {
+    "timestamp": "2026-07-13T13:37:57.543Z",
+    "cwd": "/Users/biuni/Desktop/Università/Ricerca/zk Oracles/zk-ecf",
+    "node": "v24.9.0",
+    "platform": "darwin",
+    "arch": "arm64",
+    "os": {
+      "type": "Darwin",
+      "release": "24.6.0",
+      "cpus": 10,
+      "cpuModel": "Apple M1 Pro",
+      "totalMemoryBytes": 17179869184
+    },
+    "git": {
+      "commit": "800cd5f4ca889d0cc30cc602013b69447299fe40",
+      "statusShort": "M on-chain/contracts/FuelUseVerifier.sol\n?? benchmarks/"
+    },
+    "packages": {
+      "offchain": {
+        "circomlib": "^2.0.5",
+        "dotenv": "^17.2.3",
+        "ethers": "^6.15.0",
+        "snarkjs": "^0.7.5",
+        "web3": "^4.16.0"
+      },
+      "onchain": {
+        "@nomicfoundation/hardhat-ignition": "^3.0.3",
+        "@nomicfoundation/hardhat-keystore": "^3.0.1",
+        "@nomicfoundation/hardhat-toolbox-viem": "^5.0.0",
+        "@types/node": "^22.18.8",
+        "dotenv": "^17.2.3",
+        "forge-std": "github:foundry-rs/forge-std#v1.9.4",
+        "hardhat": "^3.0.6",
+        "typescript": "~5.8.0",
+        "viem": "^2.37.9"
+      }
+    },
+    "config": {
+      "repetitions": 8,
+      "pipelineSizes": [
+        1,
+        2,
+        4,
+        8
+      ],
+      "pipelineRepeats": 3,
+      "concurrencyLevels": [
+        1,
+        2,
+        4
+      ],
+      "concurrencyPipelines": 6,
+      "aggregationSizes": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        32,
+        64,
+        128,
+        256,
+        512,
+        1024
+      ],
+      "reuseRequests": 10000
+    }
+  },
+  "circuitComplexity": [
+    {
+      "circuit": "FuelUse",
+      "r1csInfo": {
+        "raw": "[INFO]  snarkJS: Curve: bn-128\n[INFO]  snarkJS: # of Wires: 150\n[INFO]  snarkJS: # of Constraints: 148\n[INFO]  snarkJS: # of Private Inputs: 2\n[INFO]  snarkJS: # of Public Inputs: 0\n[INFO]  snarkJS: # of Labels: 164\n[INFO]  snarkJS: # of Outputs: 2",
+        "curve": "bn-128",
+        "wires": 150,
+        "constraints": 148,
+        "private_inputs": 2,
+        "public_inputs": 0,
+        "labels": 164,
+        "outputs": 2
+      },
+      "fileSizesBytes": {
+        "r1cs": 23500,
+        "wasm": 39884,
+        "zkey": 83442,
+        "verificationKey": 3109,
+        "sym": 4963
+      }
+    },
+    {
+      "circuit": "PM10",
+      "r1csInfo": {
+        "raw": "[INFO]  snarkJS: Curve: bn-128\n[INFO]  snarkJS: # of Wires: 149\n[INFO]  snarkJS: # of Constraints: 147\n[INFO]  snarkJS: # of Private Inputs: 2\n[INFO]  snarkJS: # of Public Inputs: 0\n[INFO]  snarkJS: # of Labels: 163\n[INFO]  snarkJS: # of Outputs: 2",
+        "curve": "bn-128",
+        "wires": 149,
+        "constraints": 147,
+        "private_inputs": 2,
+        "public_inputs": 0,
+        "labels": 163,
+        "outputs": 2
+      },
+      "fileSizesBytes": {
+        "r1cs": 23408,
+        "wasm": 39797,
+        "zkey": 83119,
+        "verificationKey": 3109,
+        "sym": 4935
+      }
+    },
+    {
+      "circuit": "CO2eq",
+      "r1csInfo": {
+        "raw": "[INFO]  snarkJS: Curve: bn-128\n[INFO]  snarkJS: # of Wires: 152\n[INFO]  snarkJS: # of Constraints: 150\n[INFO]  snarkJS: # of Private Inputs: 2\n[INFO]  snarkJS: # of Public Inputs: 0\n[INFO]  snarkJS: # of Labels: 168\n[INFO]  snarkJS: # of Outputs: 2",
+        "curve": "bn-128",
+        "wires": 152,
+        "constraints": 150,
+        "private_inputs": 2,
+        "public_inputs": 0,
+        "labels": 168,
+        "outputs": 2
+      },
+      "fileSizesBytes": {
+        "r1cs": 23792,
+        "wasm": 39996,
+        "zkey": 84168,
+        "verificationKey": 3107,
+        "sym": 5075
+      }
+    }
+  ],
+  "singleCircuit": {
+    "FuelUse": {
+      "iterations": [
+        {
+          "circuit": "FuelUse",
+          "input": {
+            "vehicle_type": 0,
+            "distance_traveled": 25
+          },
+          "publicSignals": [
+            "3",
+            "1"
+          ],
+          "fullProveMs": 35.31141700000012,
+          "verifyMs": 9.7677920000001,
+          "totalMs": 45.53500000000008,
+          "verified": true,
+          "proofBytesLength": 642,
+          "proofHash": "e7955eee16ff4f2da4ae13d29589482b412f596f2912cb9de74c5b14bff0d34a"
+        },
+        {
+          "circuit": "FuelUse",
+          "input": {
+            "vehicle_type": 1,
+            "distance_traveled": 5
+          },
+          "publicSignals": [
+            "1",
+            "1"
+          ],
+          "fullProveMs": 31.318708000000015,
+          "verifyMs": 9.194666000000097,
+          "totalMs": 40.839833,
+          "verified": true,
+          "proofBytesLength": 642,
+          "proofHash": "abfc03a56ee7261695b88a359541320569de94146fdfb45a378f614724f8f8e4"
+        },
+        {
+          "circuit": "FuelUse",
+          "input": {
+            "vehicle_type": 2,
+            "distance_traveled": 25
+          },
+          "publicSignals": [
+            "8",
+            "1"
+          ],
+          "fullProveMs": 31.482124999999996,
+          "verifyMs": 9.469833000000108,
+          "totalMs": 41.21183399999995,
+          "verified": true,
+          "proofBytesLength": 642,
+          "proofHash": "0ef1f6a215f9b0f1fa97ae26aa09023a55fc03297a328a074b85222151c9c788"
+        },
+        {
+          "circuit": "FuelUse",
+          "input": {
+            "vehicle_type": 0,
+            "distance_traveled": 50
+          },
+          "publicSignals": [
+            "6",
+            "1"
+          ],
+          "fullProveMs": 30.209082999999964,
+          "verifyMs": 9.250125000000025,
+          "totalMs": 39.74062499999991,
+          "verified": true,
+          "proofBytesLength": 642,
+          "proofHash": "e0dddb639ae279976d778c50b442f7a68ac850fc7515d49b36d705d479cded68"
+        },
+        {
+          "circuit": "FuelUse",
+          "input": {
+            "vehicle_type": 1,
+            "distance_traveled": 10
+          },
+          "publicSignals": [
+            "2",
+            "1"
+          ],
+          "fullProveMs": 29.786834,
+          "verifyMs": 9.037667000000056,
+          "totalMs": 39.05229199999985,
+          "verified": true,
+          "proofBytesLength": 642,
+          "proofHash": "ddaf7411558f50698724ff787396bc105bde993114294dd2b24ece59938b32de"
+        },
+        {
+          "circuit": "FuelUse",
+          "input": {
+            "vehicle_type": 2,
+            "distance_traveled": 50
+          },
+          "publicSignals": [
+            "16",
+            "1"
+          ],
+          "fullProveMs": 30.407167000000072,
+          "verifyMs": 9.759375000000091,
+          "totalMs": 40.44804199999999,
+          "verified": true,
+          "proofBytesLength": 642,
+          "proofHash": "1844aa8c556b02ef41c274deeca9665e46c58026223842bf147e6a061ab1227a"
+        },
+        {
+          "circuit": "FuelUse",
+          "input": {
+            "vehicle_type": 0,
+            "distance_traveled": 75
+          },
+          "publicSignals": [
+            "9",
+            "1"
+          ],
+          "fullProveMs": 29.094042000000172,
+          "verifyMs": 10.400333000000046,
+          "totalMs": 39.77525000000014,
+          "verified": true,
+          "proofBytesLength": 642,
+          "proofHash": "ab3fd2dca802a90cf5acc53e267f7a5dcb84a086d2170c3f65f6a375b9eaf2c3"
+        },
+        {
+          "circuit": "FuelUse",
+          "input": {
+            "vehicle_type": 1,
+            "distance_traveled": 15
+          },
+          "publicSignals": [
+            "3",
+            "1"
+          ],
+          "fullProveMs": 29.827499999999873,
+          "verifyMs": 9.145792000000029,
+          "totalMs": 39.1931669999999,
+          "verified": true,
+          "proofBytesLength": 642,
+          "proofHash": "b430d4c26ceb0e6c995267a861f4c1b2bc72bbd3a69164aa6b863e49347caffb"
+        }
+      ],
+      "fullProveMs": {
+        "count": 8,
+        "min": 29.094042000000172,
+        "max": 35.31141700000012,
+        "mean": 30.929609500000026,
+        "median": 30.308125000000018,
+        "p95": 33.971164800000075,
+        "stddev": 1.8144869051247892
+      },
+      "verifyMs": {
+        "count": 8,
+        "min": 9.037667000000056,
+        "max": 10.400333000000046,
+        "mean": 9.503197875000069,
+        "median": 9.359979000000067,
+        "p95": 10.178943650000065,
+        "stddev": 0.42504369933644826
+      },
+      "totalMs": {
+        "count": 8,
+        "min": 39.05229199999985,
+        "max": 45.53500000000008,
+        "mean": 40.72450537499998,
+        "median": 40.111646000000064,
+        "p95": 44.021891900000035,
+        "stddev": 1.9518735017367714
+      },
+      "proofBytesLength": {
+        "count": 8,
+        "min": 642,
+        "max": 642,
+        "mean": 642,
+        "median": 642,
+        "p95": 642,
+        "stddev": 0
+      },
+      "allVerified": true
+    },
+    "PM10": {
+      "iterations": [
+        {
+          "circuit": "PM10",
+          "input": {
+            "vehicle_type": 0,
+            "fuel_used": 3
+          },
+          "publicSignals": [
+            "600",
+            "1"
+          ],
+          "fullProveMs": 29.530416999999943,
+          "verifyMs": 9.326415999999881,
+          "totalMs": 39.093417000000045,
+          "verified": true,
+          "proofBytesLength": 642,
+          "proofHash": "a7c8f5037e7df7e906227d16ed29f623722a2e493cdbd92d1e7c535d5ddb15af"
+        },
+        {
+          "circuit": "PM10",
+          "input": {
+            "vehicle_type": 1,
+            "fuel_used": 1
+          },
+          "publicSignals": [
+            "320",
+            "1"
+          ],
+          "fullProveMs": 29.025915999999825,
+          "verifyMs": 9.31795800000009,
+          "totalMs": 38.57741599999986,
+          "verified": true,
+          "proofBytesLength": 642,
+          "proofHash": "62f49fb4dbbb7ea15b7569a0f31d716c844badb1360345c31d90eb8e7d719132"
+        },
+        {
+          "circuit": "PM10",
+          "input": {
+            "vehicle_type": 2,
+            "fuel_used": 8
+          },
+          "publicSignals": [
+            "4000",
+            "1"
+          ],
+          "fullProveMs": 30.540333000000146,
+          "verifyMs": 9.425167000000101,
+          "totalMs": 40.17991700000016,
+          "verified": true,
+          "proofBytesLength": 642,
+          "proofHash": "614b9ec9b4c4e82d68b1d5ae5dff0df900a2ccdfb1da442869d70670cf74490a"
+        },
+        {
+          "circuit": "PM10",
+          "input": {
+            "vehicle_type": 0,
+            "fuel_used": 6
+          },
+          "publicSignals": [
+            "1200",
+            "1"
+          ],
+          "fullProveMs": 29.62508300000013,
+          "verifyMs": 9.564875000000029,
+          "totalMs": 39.415416999999934,
+          "verified": true,
+          "proofBytesLength": 642,
+          "proofHash": "f68ec3ea9c842c1a91fcdfaa0388b25bf26898badd89da0d2b3c5963d58cf34d"
+        },
+        {
+          "circuit": "PM10",
+          "input": {
+            "vehicle_type": 1,
+            "fuel_used": 2
+          },
+          "publicSignals": [
+            "640",
+            "1"
+          ],
+          "fullProveMs": 28.802374999999984,
+          "verifyMs": 8.41362499999991,
+          "totalMs": 37.438207999999804,
+          "verified": true,
+          "proofBytesLength": 642,
+          "proofHash": "a5ea4dd4f86598ffb60233ed4978ee4df62b2d989b80f147c9deea33c716646a"
+        },
+        {
+          "circuit": "PM10",
+          "input": {
+            "vehicle_type": 2,
+            "fuel_used": 16
+          },
+          "publicSignals": [
+            "8000",
+            "1"
+          ],
+          "fullProveMs": 29.93987500000003,
+          "verifyMs": 9.133290999999872,
+          "totalMs": 39.272833999999875,
+          "verified": true,
+          "proofBytesLength": 642,
+          "proofHash": "848c12dd2d82786b13cd7cb7b4e4f476db77850cf952fa02c0884b569a4fa6c6"
+        },
+        {
+          "circuit": "PM10",
+          "input": {
+            "vehicle_type": 0,
+            "fuel_used": 9
+          },
+          "publicSignals": [
+            "1800",
+            "1"
+          ],
+          "fullProveMs": 28.88891600000011,
+          "verifyMs": 8.986916999999949,
+          "totalMs": 38.08312500000011,
+          "verified": true,
+          "proofBytesLength": 642,
+          "proofHash": "e520d23c0f6b82dd47583f178de66e140702a02bd9d2e3d51922bc05b7c6bba0"
+        },
+        {
+          "circuit": "PM10",
+          "input": {
+            "vehicle_type": 1,
+            "fuel_used": 3
+          },
+          "publicSignals": [
+            "960",
+            "1"
+          ],
+          "fullProveMs": 28.966125000000147,
+          "verifyMs": 8.558209000000033,
+          "totalMs": 37.740625000000136,
+          "verified": true,
+          "proofBytesLength": 642,
+          "proofHash": "61163ffc32ed589ba8619845fb68cbd9024a46987962445082b9b2e7e935545c"
+        }
+      ],
+      "fullProveMs": {
+        "count": 8,
+        "min": 28.802374999999984,
+        "max": 30.540333000000146,
+        "mean": 29.41488000000004,
+        "median": 29.278166499999884,
+        "p95": 30.330172700000105,
+        "stddev": 0.5705559626862109
+      },
+      "verifyMs": {
+        "count": 8,
+        "min": 8.41362499999991,
+        "max": 9.564875000000029,
+        "mean": 9.090807249999983,
+        "median": 9.22562449999998,
+        "p95": 9.515977200000055,
+        "stddev": 0.3870530275346107
+      },
+      "totalMs": {
+        "count": 8,
+        "min": 37.438207999999804,
+        "max": 40.17991700000016,
+        "mean": 38.72511987499999,
+        "median": 38.83541649999995,
+        "p95": 39.91234200000008,
+        "stddev": 0.8723477315435401
+      },
+      "proofBytesLength": {
+        "count": 8,
+        "min": 642,
+        "max": 642,
+        "mean": 642,
+        "median": 642,
+        "p95": 642,
+        "stddev": 0
+      },
+      "allVerified": true
+    },
+    "CO2eq": {
+      "iterations": [
+        {
+          "circuit": "CO2eq",
+          "input": {
+            "vehicle_type": 0,
+            "fuel_used": 3
+          },
+          "publicSignals": [
+            "6",
+            "1"
+          ],
+          "fullProveMs": 29.123167000000194,
+          "verifyMs": 9.100167000000056,
+          "totalMs": 38.450250000000324,
+          "verified": true,
+          "proofBytesLength": 642,
+          "proofHash": "904df47d90769c8f2568fc35cecc8f38dc968dab5f13eed5c0917c6d3b686fae"
+        },
+        {
+          "circuit": "CO2eq",
+          "input": {
+            "vehicle_type": 1,
+            "fuel_used": 1
+          },
+          "publicSignals": [
+            "3",
+            "1"
+          ],
+          "fullProveMs": 30.274832999999944,
+          "verifyMs": 8.568624999999884,
+          "totalMs": 39.057124999999814,
+          "verified": true,
+          "proofBytesLength": 642,
+          "proofHash": "a5f0dd2ed097ed21b8d18110b2982cc55a25818b832b3739bd35f2ea44ae8fbb"
+        },
+        {
+          "circuit": "CO2eq",
+          "input": {
+            "vehicle_type": 2,
+            "fuel_used": 8
+          },
+          "publicSignals": [
+            "32",
+            "1"
+          ],
+          "fullProveMs": 30.827166999999918,
+          "verifyMs": 9.28304100000014,
+          "totalMs": 40.34783299999981,
+          "verified": true,
+          "proofBytesLength": 642,
+          "proofHash": "87b72846d407af7d76bba8ba0061b748703eb9f0ecb6bd2d6a071bd8f7d176e4"
+        },
+        {
+          "circuit": "CO2eq",
+          "input": {
+            "vehicle_type": 0,
+            "fuel_used": 6
+          },
+          "publicSignals": [
+            "12",
+            "1"
+          ],
+          "fullProveMs": 28.743333999999777,
+          "verifyMs": 9.118750000000091,
+          "totalMs": 38.04145900000003,
+          "verified": true,
+          "proofBytesLength": 642,
+          "proofHash": "212a6b1686959fc2ee90e91627a53bf11a71ee52d0e79df3391c7cbf1e528422"
+        },
+        {
+          "circuit": "CO2eq",
+          "input": {
+            "vehicle_type": 1,
+            "fuel_used": 2
+          },
+          "publicSignals": [
+            "6",
+            "1"
+          ],
+          "fullProveMs": 28.62216699999999,
+          "verifyMs": 9.29175000000032,
+          "totalMs": 38.097625000000335,
+          "verified": true,
+          "proofBytesLength": 642,
+          "proofHash": "373d7752abe924bbee891d932e6d57edc7bcee673e182a4c7662fd38e91ef84f"
+        },
+        {
+          "circuit": "CO2eq",
+          "input": {
+            "vehicle_type": 2,
+            "fuel_used": 16
+          },
+          "publicSignals": [
+            "64",
+            "1"
+          ],
+          "fullProveMs": 29.635415999999623,
+          "verifyMs": 8.920708000000104,
+          "totalMs": 38.76829099999986,
+          "verified": true,
+          "proofBytesLength": 642,
+          "proofHash": "92b823c012383c50471538327852c1df45550178a9c0c45dd79bd011bee82b3c"
+        },
+        {
+          "circuit": "CO2eq",
+          "input": {
+            "vehicle_type": 0,
+            "fuel_used": 9
+          },
+          "publicSignals": [
+            "18",
+            "1"
+          ],
+          "fullProveMs": 28.739374999999654,
+          "verifyMs": 9.358000000000175,
+          "totalMs": 38.3316249999998,
+          "verified": true,
+          "proofBytesLength": 642,
+          "proofHash": "b4a9a943f16bbbc6c94589b453ed345adc7a4933758b8c6ee1928cbaf259625d"
+        },
+        {
+          "circuit": "CO2eq",
+          "input": {
+            "vehicle_type": 1,
+            "fuel_used": 3
+          },
+          "publicSignals": [
+            "9",
+            "1"
+          ],
+          "fullProveMs": 28.84375,
+          "verifyMs": 9.641959000000043,
+          "totalMs": 38.828207999999904,
+          "verified": true,
+          "proofBytesLength": 642,
+          "proofHash": "c8c9075325ef6e32d9e15274d2ca394c86331b740b9f7474874757bf08df8020"
+        }
+      ],
+      "fullProveMs": {
+        "count": 8,
+        "min": 28.62216699999999,
+        "max": 30.827166999999918,
+        "mean": 29.351151124999888,
+        "median": 28.983458500000097,
+        "p95": 30.633850099999925,
+        "stddev": 0.7662554886086407
+      },
+      "verifyMs": {
+        "count": 8,
+        "min": 8.568624999999884,
+        "max": 9.641959000000043,
+        "mean": 9.160375000000101,
+        "median": 9.200895500000115,
+        "p95": 9.542573350000088,
+        "stddev": 0.29921796092904873
+      },
+      "totalMs": {
+        "count": 8,
+        "min": 38.04145900000003,
+        "max": 40.34783299999981,
+        "mean": 38.740301999999986,
+        "median": 38.60927050000009,
+        "p95": 39.89608519999981,
+        "stddev": 0.6933258519859857
+      },
+      "proofBytesLength": {
+        "count": 8,
+        "min": 642,
+        "max": 642,
+        "mean": 642,
+        "median": 642,
+        "p95": 642,
+        "stddev": 0
+      },
+      "allVerified": true
+    }
+  },
+  "sequentialPipelines": [
+    {
+      "size": 1,
+      "repeats": [
+        {
+          "size": 1,
+          "repeat": 0,
+          "proofCount": 3,
+          "wallMs": 115.37854100000004,
+          "generationMs": 86.37616800000023,
+          "verificationMs": 27.80712399999993,
+          "aggregationMs": 0.06062500000007276,
+          "aggregateLevels": 0,
+          "allVerified": true,
+          "rootHash": "f71c9a989f71248a4dafcb74c2bd364c18c77ef3d0f9fa57efe43b9dc1134538",
+          "sampleOutput": {
+            "fuel_used": 3,
+            "pm10": 600,
+            "co2eq": 6
+          }
+        },
+        {
+          "size": 1,
+          "repeat": 1,
+          "proofCount": 3,
+          "wallMs": 115.29925000000003,
+          "generationMs": 86.52512399999978,
+          "verificationMs": 27.716457999999875,
+          "aggregationMs": 0.06116600000041217,
+          "aggregateLevels": 0,
+          "allVerified": true,
+          "rootHash": "0088a55773d6bec5c74ebb51b075c3105f5fcac5468ead8516c29ebde343d977",
+          "sampleOutput": {
+            "fuel_used": 3,
+            "pm10": 600,
+            "co2eq": 6
+          }
+        },
+        {
+          "size": 1,
+          "repeat": 2,
+          "proofCount": 3,
+          "wallMs": 117.05770799999982,
+          "generationMs": 86.53229200000033,
+          "verificationMs": 29.56275100000039,
+          "aggregationMs": 0.05366700000013225,
+          "aggregateLevels": 0,
+          "allVerified": true,
+          "rootHash": "c2086bb8b1517d11d32ec33d819a8a7405a014e6e31dcb3bd8e1d1f03aa3da5d",
+          "sampleOutput": {
+            "fuel_used": 3,
+            "pm10": 600,
+            "co2eq": 6
+          }
+        }
+      ],
+      "wallMs": {
+        "count": 3,
+        "min": 115.29925000000003,
+        "max": 117.05770799999982,
+        "mean": 115.91183299999996,
+        "median": 115.37854100000004,
+        "p95": 116.88979129999984,
+        "stddev": 0.810902337888172
+      },
+      "generationMs": {
+        "count": 3,
+        "min": 86.37616800000023,
+        "max": 86.53229200000033,
+        "mean": 86.47786133333345,
+        "median": 86.52512399999978,
+        "p95": 86.53157520000028,
+        "stddev": 0.07196756486694406
+      },
+      "verificationMs": {
+        "count": 3,
+        "min": 27.716457999999875,
+        "max": 29.56275100000039,
+        "mean": 28.362111000000066,
+        "median": 27.80712399999993,
+        "p95": 29.387188300000343,
+        "stddev": 0.8497871843740591
+      },
+      "aggregationMs": {
+        "count": 3,
+        "min": 0.05366700000013225,
+        "max": 0.06116600000041217,
+        "mean": 0.05848600000020573,
+        "median": 0.06062500000007276,
+        "p95": 0.06111190000037823,
+        "stddev": 0.0034146977416869505
+      },
+      "throughputProofsPerSecond": {
+        "count": 3,
+        "min": 25.62838493301103,
+        "max": 26.01924990839055,
+        "mean": 25.88300122493223,
+        "median": 26.0013688333951,
+        "p95": 26.017461800891006,
+        "stddev": 0.18018883667701338
+      },
+      "allVerified": true
+    },
+    {
+      "size": 2,
+      "repeats": [
+        {
+          "size": 2,
+          "repeat": 0,
+          "proofCount": 6,
+          "wallMs": 232.06275000000005,
+          "generationMs": 174.579749,
+          "verificationMs": 55.32466799999975,
+          "aggregationMs": 0.11391600000024482,
+          "aggregateLevels": 1,
+          "allVerified": true,
+          "rootHash": "2aa00acef7fb9e3ea5f13c68a119647d61b96337b28b3ec0ff0ad1984cb09a5b",
+          "sampleOutput": {
+            "fuel_used": 3,
+            "pm10": 600,
+            "co2eq": 6
+          }
+        },
+        {
+          "size": 2,
+          "repeat": 1,
+          "proofCount": 6,
+          "wallMs": 234.57858299999998,
+          "generationMs": 174.77870900000016,
+          "verificationMs": 57.68774900000062,
+          "aggregationMs": 0.1272079999998823,
+          "aggregateLevels": 1,
+          "allVerified": true,
+          "rootHash": "71d7be2a681b2b26144c76de91f01bf136997da4cda9a1191b1a64d7e366f5a3",
+          "sampleOutput": {
+            "fuel_used": 3,
+            "pm10": 600,
+            "co2eq": 6
+          }
+        },
+        {
+          "size": 2,
+          "repeat": 2,
+          "proofCount": 6,
+          "wallMs": 229.84329200000002,
+          "generationMs": 172.2772090000003,
+          "verificationMs": 55.54649999999947,
+          "aggregationMs": 0.10445799999979499,
+          "aggregateLevels": 1,
+          "allVerified": true,
+          "rootHash": "c365bfcbe50f3b744778f39df25a9b8c10d682932385b23e33b94da1bcf96218",
+          "sampleOutput": {
+            "fuel_used": 3,
+            "pm10": 600,
+            "co2eq": 6
+          }
+        }
+      ],
+      "wallMs": {
+        "count": 3,
+        "min": 229.84329200000002,
+        "max": 234.57858299999998,
+        "mean": 232.1615416666667,
+        "median": 232.06275000000005,
+        "p95": 234.3269997,
+        "stddev": 1.9344361898190106
+      },
+      "generationMs": {
+        "count": 3,
+        "min": 172.2772090000003,
+        "max": 174.77870900000016,
+        "mean": 173.8785556666668,
+        "median": 174.579749,
+        "p95": 174.75881300000015,
+        "stddev": 1.1352326136180124
+      },
+      "verificationMs": {
+        "count": 3,
+        "min": 55.32466799999975,
+        "max": 57.68774900000062,
+        "mean": 56.18630566666661,
+        "median": 55.54649999999947,
+        "p95": 57.47362410000051,
+        "stddev": 1.0655363036098535
+      },
+      "aggregationMs": {
+        "count": 3,
+        "min": 0.10445799999979499,
+        "max": 0.1272079999998823,
+        "mean": 0.11519399999997404,
+        "median": 0.11391600000024482,
+        "p95": 0.12587879999991855,
+        "stddev": 0.009331508916942784
+      },
+      "throughputProofsPerSecond": {
+        "count": 3,
+        "min": 25.577782606010544,
+        "max": 26.10474270443359,
+        "mean": 25.845867048871145,
+        "median": 25.85507583616931,
+        "p95": 26.079776017607163,
+        "stddev": 0.21522908362197676
+      },
+      "allVerified": true
+    },
+    {
+      "size": 4,
+      "repeats": [
+        {
+          "size": 4,
+          "repeat": 0,
+          "proofCount": 12,
+          "wallMs": 521.6897080000003,
+          "generationMs": 373.8330399999995,
+          "verificationMs": 143.66691599999876,
+          "aggregationMs": 0.1593750000001819,
+          "aggregateLevels": 2,
+          "allVerified": true,
+          "rootHash": "82500891d893136890931eb636396befee6cb2f530b9c586fb604d38310141ed",
+          "sampleOutput": {
+            "fuel_used": 3,
+            "pm10": 600,
+            "co2eq": 6
+          }
+        },
+        {
+          "size": 4,
+          "repeat": 1,
+          "proofCount": 12,
+          "wallMs": 478.3527089999998,
+          "generationMs": 361.72500200000104,
+          "verificationMs": 112.87379300000066,
+          "aggregationMs": 0.12937500000043656,
+          "aggregateLevels": 2,
+          "allVerified": true,
+          "rootHash": "0b8aa1b9172c81aa58ab2900b160eaef6b8393aa07bc0659d6ffb677ceea146d",
+          "sampleOutput": {
+            "fuel_used": 3,
+            "pm10": 600,
+            "co2eq": 6
+          }
+        },
+        {
+          "size": 4,
+          "repeat": 2,
+          "proofCount": 12,
+          "wallMs": 481.7919580000007,
+          "generationMs": 362.0423320000009,
+          "verificationMs": 115.92141699999956,
+          "aggregationMs": 0.13624999999956344,
+          "aggregateLevels": 2,
+          "allVerified": true,
+          "rootHash": "5c242ee4ce4b1a75aa839469bb3e670014553a73310093e010681321d2a67f3a",
+          "sampleOutput": {
+            "fuel_used": 3,
+            "pm10": 600,
+            "co2eq": 6
+          }
+        }
+      ],
+      "wallMs": {
+        "count": 3,
+        "min": 478.3527089999998,
+        "max": 521.6897080000003,
+        "mean": 493.94479166666696,
+        "median": 481.7919580000007,
+        "p95": 517.6999330000003,
+        "stddev": 19.66879754295713
+      },
+      "generationMs": {
+        "count": 3,
+        "min": 361.72500200000104,
+        "max": 373.8330399999995,
+        "mean": 365.8667913333338,
+        "median": 362.0423320000009,
+        "p95": 372.65396919999966,
+        "stddev": 5.634477967335858
+      },
+      "verificationMs": {
+        "count": 3,
+        "min": 112.87379300000066,
+        "max": 143.66691599999876,
+        "mean": 124.15404199999966,
+        "median": 115.92141699999956,
+        "p95": 140.89236609999884,
+        "stddev": 13.853668390627877
+      },
+      "aggregationMs": {
+        "count": 3,
+        "min": 0.12937500000043656,
+        "max": 0.1593750000001819,
+        "mean": 0.1416666666667273,
+        "median": 0.13624999999956344,
+        "p95": 0.15706250000012006,
+        "stddev": 0.01283238632870112
+      },
+      "throughputProofsPerSecond": {
+        "count": 3,
+        "min": 23.002178912067002,
+        "max": 25.086091861141746,
+        "mean": 24.331762253185634,
+        "median": 24.907015986348163,
+        "p95": 25.06818427366239,
+        "stddev": 0.9429955595400635
+      },
+      "allVerified": true
+    },
+    {
+      "size": 8,
+      "repeats": [
+        {
+          "size": 8,
+          "repeat": 0,
+          "proofCount": 24,
+          "wallMs": 938.3550000000005,
+          "generationMs": 704.1995430000015,
+          "verificationMs": 226.65616800000043,
+          "aggregationMs": 0.16670799999974406,
+          "aggregateLevels": 3,
+          "allVerified": true,
+          "rootHash": "bf2cfdc37519cb83d60711506ccbc58ec5dfff9778070d650c7bd253d5a9acec",
+          "sampleOutput": {
+            "fuel_used": 3,
+            "pm10": 600,
+            "co2eq": 6
+          }
+        },
+        {
+          "size": 8,
+          "repeat": 1,
+          "proofCount": 24,
+          "wallMs": 940.0842919999996,
+          "generationMs": 705.5831260000014,
+          "verificationMs": 227.0979159999988,
+          "aggregationMs": 0.1479589999999007,
+          "aggregateLevels": 3,
+          "allVerified": true,
+          "rootHash": "a5e596bb8847fcf9fad92587b495618ac07efb8b3561a721907d3af4626792df",
+          "sampleOutput": {
+            "fuel_used": 3,
+            "pm10": 600,
+            "co2eq": 6
+          }
+        },
+        {
+          "size": 8,
+          "repeat": 2,
+          "proofCount": 24,
+          "wallMs": 956.5698330000005,
+          "generationMs": 728.2033739999988,
+          "verificationMs": 221.04370799999833,
+          "aggregationMs": 0.14954200000011042,
+          "aggregateLevels": 3,
+          "allVerified": true,
+          "rootHash": "578892556813bbf7dc133b678efe51d5f3354c740211465c5083f6af87417919",
+          "sampleOutput": {
+            "fuel_used": 3,
+            "pm10": 600,
+            "co2eq": 6
+          }
+        }
+      ],
+      "wallMs": {
+        "count": 3,
+        "min": 938.3550000000005,
+        "max": 956.5698330000005,
+        "mean": 945.0030416666668,
+        "median": 940.0842919999996,
+        "p95": 954.9212789000004,
+        "stddev": 8.209368997959054
+      },
+      "generationMs": {
+        "count": 3,
+        "min": 704.1995430000015,
+        "max": 728.2033739999988,
+        "mean": 712.6620143333339,
+        "median": 705.5831260000014,
+        "p95": 725.9413491999991,
+        "stddev": 11.00390750887917
+      },
+      "verificationMs": {
+        "count": 3,
+        "min": 221.04370799999833,
+        "max": 227.0979159999988,
+        "mean": 224.93259733333252,
+        "median": 226.65616800000043,
+        "p95": 227.05374119999897,
+        "stddev": 2.755767347348221
+      },
+      "aggregationMs": {
+        "count": 3,
+        "min": 0.1479589999999007,
+        "max": 0.16670799999974406,
+        "mean": 0.15473633333325174,
+        "median": 0.14954200000011042,
+        "p95": 0.16499139999978069,
+        "stddev": 0.008489879242579318
+      },
+      "throughputProofsPerSecond": {
+        "count": 3,
+        "min": 25.089647584568965,
+        "max": 25.576674073245186,
+        "mean": 25.39864908338471,
+        "median": 25.529625592339983,
+        "p95": 25.571969225154668,
+        "stddev": 0.21933966747437653
+      },
+      "allVerified": true
+    }
+  ],
+  "aggregationOverhead": [
+    {
+      "size": 1,
+      "runs": [
+        {
+          "repeat": 0,
+          "elapsedMs": 0.0011670000003505265,
+          "levels": 0,
+          "rootHash": "9e631461e1c412ab7e9bf3824f79e16ec44ceb7d660b66b20f7e616c9ab3ba92"
+        },
+        {
+          "repeat": 1,
+          "elapsedMs": 0.0006670000002486631,
+          "levels": 0,
+          "rootHash": "9e631461e1c412ab7e9bf3824f79e16ec44ceb7d660b66b20f7e616c9ab3ba92"
+        },
+        {
+          "repeat": 2,
+          "elapsedMs": 0.0004999999991923687,
+          "levels": 0,
+          "rootHash": "9e631461e1c412ab7e9bf3824f79e16ec44ceb7d660b66b20f7e616c9ab3ba92"
+        },
+        {
+          "repeat": 3,
+          "elapsedMs": 0.0005000000001018634,
+          "levels": 0,
+          "rootHash": "9e631461e1c412ab7e9bf3824f79e16ec44ceb7d660b66b20f7e616c9ab3ba92"
+        },
+        {
+          "repeat": 4,
+          "elapsedMs": 0.0004579999995257822,
+          "levels": 0,
+          "rootHash": "9e631461e1c412ab7e9bf3824f79e16ec44ceb7d660b66b20f7e616c9ab3ba92"
+        },
+        {
+          "repeat": 5,
+          "elapsedMs": 0.0005840000003445311,
+          "levels": 0,
+          "rootHash": "9e631461e1c412ab7e9bf3824f79e16ec44ceb7d660b66b20f7e616c9ab3ba92"
+        },
+        {
+          "repeat": 6,
+          "elapsedMs": 0.0005840000003445311,
+          "levels": 0,
+          "rootHash": "9e631461e1c412ab7e9bf3824f79e16ec44ceb7d660b66b20f7e616c9ab3ba92"
+        },
+        {
+          "repeat": 7,
+          "elapsedMs": 0.0012500000002546585,
+          "levels": 0,
+          "rootHash": "9e631461e1c412ab7e9bf3824f79e16ec44ceb7d660b66b20f7e616c9ab3ba92"
+        },
+        {
+          "repeat": 8,
+          "elapsedMs": 0.0030000000006111804,
+          "levels": 0,
+          "rootHash": "9e631461e1c412ab7e9bf3824f79e16ec44ceb7d660b66b20f7e616c9ab3ba92"
+        },
+        {
+          "repeat": 9,
+          "elapsedMs": 0.0007500000001527951,
+          "levels": 0,
+          "rootHash": "9e631461e1c412ab7e9bf3824f79e16ec44ceb7d660b66b20f7e616c9ab3ba92"
+        }
+      ],
+      "elapsedMs": {
+        "count": 10,
+        "min": 0.0004579999995257822,
+        "max": 0.0030000000006111804,
+        "mean": 0.00094600000011269,
+        "median": 0.0006255000002965971,
+        "p95": 0.0022125000004507437,
+        "stddev": 0.0007331094054242753
+      },
+      "levels": 0
+    },
+    {
+      "size": 2,
+      "runs": [
+        {
+          "repeat": 0,
+          "elapsedMs": 0.011792000000241387,
+          "levels": 1,
+          "rootHash": "6087223e4106ef4fbebfbc95acdaa9eb7379e75c7fedbc2d6a64a822370db617"
+        },
+        {
+          "repeat": 1,
+          "elapsedMs": 0.014500000000225555,
+          "levels": 1,
+          "rootHash": "6087223e4106ef4fbebfbc95acdaa9eb7379e75c7fedbc2d6a64a822370db617"
+        },
+        {
+          "repeat": 2,
+          "elapsedMs": 0.01212500000019645,
+          "levels": 1,
+          "rootHash": "6087223e4106ef4fbebfbc95acdaa9eb7379e75c7fedbc2d6a64a822370db617"
+        },
+        {
+          "repeat": 3,
+          "elapsedMs": 0.005458999999973457,
+          "levels": 1,
+          "rootHash": "6087223e4106ef4fbebfbc95acdaa9eb7379e75c7fedbc2d6a64a822370db617"
+        },
+        {
+          "repeat": 4,
+          "elapsedMs": 0.0027500000005602487,
+          "levels": 1,
+          "rootHash": "6087223e4106ef4fbebfbc95acdaa9eb7379e75c7fedbc2d6a64a822370db617"
+        },
+        {
+          "repeat": 5,
+          "elapsedMs": 0.0024999999995998223,
+          "levels": 1,
+          "rootHash": "6087223e4106ef4fbebfbc95acdaa9eb7379e75c7fedbc2d6a64a822370db617"
+        },
+        {
+          "repeat": 6,
+          "elapsedMs": 0.002457999999933236,
+          "levels": 1,
+          "rootHash": "6087223e4106ef4fbebfbc95acdaa9eb7379e75c7fedbc2d6a64a822370db617"
+        },
+        {
+          "repeat": 7,
+          "elapsedMs": 0.0026250000000800355,
+          "levels": 1,
+          "rootHash": "6087223e4106ef4fbebfbc95acdaa9eb7379e75c7fedbc2d6a64a822370db617"
+        },
+        {
+          "repeat": 8,
+          "elapsedMs": 0.0025420000001759036,
+          "levels": 1,
+          "rootHash": "6087223e4106ef4fbebfbc95acdaa9eb7379e75c7fedbc2d6a64a822370db617"
+        },
+        {
+          "repeat": 9,
+          "elapsedMs": 0.002500000000509317,
+          "levels": 1,
+          "rootHash": "6087223e4106ef4fbebfbc95acdaa9eb7379e75c7fedbc2d6a64a822370db617"
+        }
+      ],
+      "elapsedMs": {
+        "count": 10,
+        "min": 0.002457999999933236,
+        "max": 0.014500000000225555,
+        "mean": 0.005925100000149541,
+        "median": 0.002687500000320142,
+        "p95": 0.013431250000212456,
+        "stddev": 0.004631480572166966
+      },
+      "levels": 1
+    },
+    {
+      "size": 4,
+      "runs": [
+        {
+          "repeat": 0,
+          "elapsedMs": 0.009250000000065484,
+          "levels": 2,
+          "rootHash": "e1d84c146b628b590da3dd717b107b5701fa5a4cf413ab21fb0ce34432b2d447"
+        },
+        {
+          "repeat": 1,
+          "elapsedMs": 0.007708000000093307,
+          "levels": 2,
+          "rootHash": "e1d84c146b628b590da3dd717b107b5701fa5a4cf413ab21fb0ce34432b2d447"
+        },
+        {
+          "repeat": 2,
+          "elapsedMs": 0.0072079999999914435,
+          "levels": 2,
+          "rootHash": "e1d84c146b628b590da3dd717b107b5701fa5a4cf413ab21fb0ce34432b2d447"
+        },
+        {
+          "repeat": 3,
+          "elapsedMs": 0.007083999999849766,
+          "levels": 2,
+          "rootHash": "e1d84c146b628b590da3dd717b107b5701fa5a4cf413ab21fb0ce34432b2d447"
+        },
+        {
+          "repeat": 4,
+          "elapsedMs": 0.008667000000059488,
+          "levels": 2,
+          "rootHash": "e1d84c146b628b590da3dd717b107b5701fa5a4cf413ab21fb0ce34432b2d447"
+        },
+        {
+          "repeat": 5,
+          "elapsedMs": 0.006790999999793712,
+          "levels": 2,
+          "rootHash": "e1d84c146b628b590da3dd717b107b5701fa5a4cf413ab21fb0ce34432b2d447"
+        },
+        {
+          "repeat": 6,
+          "elapsedMs": 0.006292000000030384,
+          "levels": 2,
+          "rootHash": "e1d84c146b628b590da3dd717b107b5701fa5a4cf413ab21fb0ce34432b2d447"
+        },
+        {
+          "repeat": 7,
+          "elapsedMs": 0.005874999999832653,
+          "levels": 2,
+          "rootHash": "e1d84c146b628b590da3dd717b107b5701fa5a4cf413ab21fb0ce34432b2d447"
+        },
+        {
+          "repeat": 8,
+          "elapsedMs": 0.006124999999883585,
+          "levels": 2,
+          "rootHash": "e1d84c146b628b590da3dd717b107b5701fa5a4cf413ab21fb0ce34432b2d447"
+        },
+        {
+          "repeat": 9,
+          "elapsedMs": 0.006124999999883585,
+          "levels": 2,
+          "rootHash": "e1d84c146b628b590da3dd717b107b5701fa5a4cf413ab21fb0ce34432b2d447"
+        }
+      ],
+      "elapsedMs": {
+        "count": 10,
+        "min": 0.005874999999832653,
+        "max": 0.009250000000065484,
+        "mean": 0.007112499999948341,
+        "median": 0.006937499999821739,
+        "p95": 0.008987650000062785,
+        "stddev": 0.0010774149851166797
+      },
+      "levels": 2
+    },
+    {
+      "size": 8,
+      "runs": [
+        {
+          "repeat": 0,
+          "elapsedMs": 0.014125000000603904,
+          "levels": 3,
+          "rootHash": "0f3d480e1192608e040d53fc2e73e522c16162ff2721100757132131adc2d072"
+        },
+        {
+          "repeat": 1,
+          "elapsedMs": 0.013624999999592546,
+          "levels": 3,
+          "rootHash": "0f3d480e1192608e040d53fc2e73e522c16162ff2721100757132131adc2d072"
+        },
+        {
+          "repeat": 2,
+          "elapsedMs": 0.016292000000248663,
+          "levels": 3,
+          "rootHash": "0f3d480e1192608e040d53fc2e73e522c16162ff2721100757132131adc2d072"
+        },
+        {
+          "repeat": 3,
+          "elapsedMs": 0.03808400000070833,
+          "levels": 3,
+          "rootHash": "0f3d480e1192608e040d53fc2e73e522c16162ff2721100757132131adc2d072"
+        },
+        {
+          "repeat": 4,
+          "elapsedMs": 0.014333000000078755,
+          "levels": 3,
+          "rootHash": "0f3d480e1192608e040d53fc2e73e522c16162ff2721100757132131adc2d072"
+        },
+        {
+          "repeat": 5,
+          "elapsedMs": 0.014041000000361237,
+          "levels": 3,
+          "rootHash": "0f3d480e1192608e040d53fc2e73e522c16162ff2721100757132131adc2d072"
+        },
+        {
+          "repeat": 6,
+          "elapsedMs": 0.016249999999672582,
+          "levels": 3,
+          "rootHash": "0f3d480e1192608e040d53fc2e73e522c16162ff2721100757132131adc2d072"
+        },
+        {
+          "repeat": 7,
+          "elapsedMs": 0.014874999999847205,
+          "levels": 3,
+          "rootHash": "0f3d480e1192608e040d53fc2e73e522c16162ff2721100757132131adc2d072"
+        },
+        {
+          "repeat": 8,
+          "elapsedMs": 0.01375000000007276,
+          "levels": 3,
+          "rootHash": "0f3d480e1192608e040d53fc2e73e522c16162ff2721100757132131adc2d072"
+        },
+        {
+          "repeat": 9,
+          "elapsedMs": 0.013834000000315427,
+          "levels": 3,
+          "rootHash": "0f3d480e1192608e040d53fc2e73e522c16162ff2721100757132131adc2d072"
+        }
+      ],
+      "elapsedMs": {
+        "count": 10,
+        "min": 0.013624999999592546,
+        "max": 0.03808400000070833,
+        "mean": 0.01692090000015014,
+        "median": 0.01422900000034133,
+        "p95": 0.028277600000501456,
+        "stddev": 0.007114511599014682
+      },
+      "levels": 3
+    },
+    {
+      "size": 16,
+      "runs": [
+        {
+          "repeat": 0,
+          "elapsedMs": 0.029708000000027823,
+          "levels": 4,
+          "rootHash": "41711abed9f989c157f345f4f16c1148c3310f8bda4be1c50111b75257569954"
+        },
+        {
+          "repeat": 1,
+          "elapsedMs": 0.028916999999637483,
+          "levels": 4,
+          "rootHash": "41711abed9f989c157f345f4f16c1148c3310f8bda4be1c50111b75257569954"
+        },
+        {
+          "repeat": 2,
+          "elapsedMs": 0.02641600000060862,
+          "levels": 4,
+          "rootHash": "41711abed9f989c157f345f4f16c1148c3310f8bda4be1c50111b75257569954"
+        },
+        {
+          "repeat": 3,
+          "elapsedMs": 0.027124999999614374,
+          "levels": 4,
+          "rootHash": "41711abed9f989c157f345f4f16c1148c3310f8bda4be1c50111b75257569954"
+        },
+        {
+          "repeat": 4,
+          "elapsedMs": 0.025709000000460946,
+          "levels": 4,
+          "rootHash": "41711abed9f989c157f345f4f16c1148c3310f8bda4be1c50111b75257569954"
+        },
+        {
+          "repeat": 5,
+          "elapsedMs": 0.026084000000082597,
+          "levels": 4,
+          "rootHash": "41711abed9f989c157f345f4f16c1148c3310f8bda4be1c50111b75257569954"
+        },
+        {
+          "repeat": 6,
+          "elapsedMs": 0.027250000000094587,
+          "levels": 4,
+          "rootHash": "41711abed9f989c157f345f4f16c1148c3310f8bda4be1c50111b75257569954"
+        },
+        {
+          "repeat": 7,
+          "elapsedMs": 0.028792000000066764,
+          "levels": 4,
+          "rootHash": "41711abed9f989c157f345f4f16c1148c3310f8bda4be1c50111b75257569954"
+        },
+        {
+          "repeat": 8,
+          "elapsedMs": 0.035375000000385626,
+          "levels": 4,
+          "rootHash": "41711abed9f989c157f345f4f16c1148c3310f8bda4be1c50111b75257569954"
+        },
+        {
+          "repeat": 9,
+          "elapsedMs": 0.02849999999943975,
+          "levels": 4,
+          "rootHash": "41711abed9f989c157f345f4f16c1148c3310f8bda4be1c50111b75257569954"
+        }
+      ],
+      "elapsedMs": {
+        "count": 10,
+        "min": 0.025709000000460946,
+        "max": 0.035375000000385626,
+        "mean": 0.028387600000041858,
+        "median": 0.02787499999976717,
+        "p95": 0.03282485000022461,
+        "stddev": 0.0026510492715246825
+      },
+      "levels": 4
+    },
+    {
+      "size": 32,
+      "runs": [
+        {
+          "repeat": 0,
+          "elapsedMs": 0.05587500000001455,
+          "levels": 5,
+          "rootHash": "622cdfc13f7316753c0e23df737d223ae458dadaccb3189359bb89ba9d65f0cd"
+        },
+        {
+          "repeat": 1,
+          "elapsedMs": 0.09483300000010786,
+          "levels": 5,
+          "rootHash": "622cdfc13f7316753c0e23df737d223ae458dadaccb3189359bb89ba9d65f0cd"
+        },
+        {
+          "repeat": 2,
+          "elapsedMs": 0.09379200000057608,
+          "levels": 5,
+          "rootHash": "622cdfc13f7316753c0e23df737d223ae458dadaccb3189359bb89ba9d65f0cd"
+        },
+        {
+          "repeat": 3,
+          "elapsedMs": 0.05083400000057736,
+          "levels": 5,
+          "rootHash": "622cdfc13f7316753c0e23df737d223ae458dadaccb3189359bb89ba9d65f0cd"
+        },
+        {
+          "repeat": 4,
+          "elapsedMs": 0.04941600000074686,
+          "levels": 5,
+          "rootHash": "622cdfc13f7316753c0e23df737d223ae458dadaccb3189359bb89ba9d65f0cd"
+        },
+        {
+          "repeat": 5,
+          "elapsedMs": 0.05241699999987759,
+          "levels": 5,
+          "rootHash": "622cdfc13f7316753c0e23df737d223ae458dadaccb3189359bb89ba9d65f0cd"
+        },
+        {
+          "repeat": 6,
+          "elapsedMs": 0.054917000000386906,
+          "levels": 5,
+          "rootHash": "622cdfc13f7316753c0e23df737d223ae458dadaccb3189359bb89ba9d65f0cd"
+        },
+        {
+          "repeat": 7,
+          "elapsedMs": 0.05391700000018318,
+          "levels": 5,
+          "rootHash": "622cdfc13f7316753c0e23df737d223ae458dadaccb3189359bb89ba9d65f0cd"
+        },
+        {
+          "repeat": 8,
+          "elapsedMs": 0.06779100000039762,
+          "levels": 5,
+          "rootHash": "622cdfc13f7316753c0e23df737d223ae458dadaccb3189359bb89ba9d65f0cd"
+        },
+        {
+          "repeat": 9,
+          "elapsedMs": 0.053708999999798834,
+          "levels": 5,
+          "rootHash": "622cdfc13f7316753c0e23df737d223ae458dadaccb3189359bb89ba9d65f0cd"
+        }
+      ],
+      "elapsedMs": {
+        "count": 10,
+        "min": 0.04941600000074686,
+        "max": 0.09483300000010786,
+        "mean": 0.06275010000026668,
+        "median": 0.05441700000028504,
+        "p95": 0.09436455000031856,
+        "stddev": 0.01647202755859062
+      },
+      "levels": 5
+    },
+    {
+      "size": 64,
+      "runs": [
+        {
+          "repeat": 0,
+          "elapsedMs": 0.10762499999964348,
+          "levels": 6,
+          "rootHash": "33aa7c16b8e7ef8cafa6e1f265fbf49377ccdcb83451347edd2e89ccf05d0e5d"
+        },
+        {
+          "repeat": 1,
+          "elapsedMs": 0.09412500000053114,
+          "levels": 6,
+          "rootHash": "33aa7c16b8e7ef8cafa6e1f265fbf49377ccdcb83451347edd2e89ccf05d0e5d"
+        },
+        {
+          "repeat": 2,
+          "elapsedMs": 0.08729099999982282,
+          "levels": 6,
+          "rootHash": "33aa7c16b8e7ef8cafa6e1f265fbf49377ccdcb83451347edd2e89ccf05d0e5d"
+        },
+        {
+          "repeat": 3,
+          "elapsedMs": 0.08300000000053842,
+          "levels": 6,
+          "rootHash": "33aa7c16b8e7ef8cafa6e1f265fbf49377ccdcb83451347edd2e89ccf05d0e5d"
+        },
+        {
+          "repeat": 4,
+          "elapsedMs": 0.0934159999997064,
+          "levels": 6,
+          "rootHash": "33aa7c16b8e7ef8cafa6e1f265fbf49377ccdcb83451347edd2e89ccf05d0e5d"
+        },
+        {
+          "repeat": 5,
+          "elapsedMs": 0.08708300000034797,
+          "levels": 6,
+          "rootHash": "33aa7c16b8e7ef8cafa6e1f265fbf49377ccdcb83451347edd2e89ccf05d0e5d"
+        },
+        {
+          "repeat": 6,
+          "elapsedMs": 0.7072079999998095,
+          "levels": 6,
+          "rootHash": "33aa7c16b8e7ef8cafa6e1f265fbf49377ccdcb83451347edd2e89ccf05d0e5d"
+        },
+        {
+          "repeat": 7,
+          "elapsedMs": 0.09841599999981554,
+          "levels": 6,
+          "rootHash": "33aa7c16b8e7ef8cafa6e1f265fbf49377ccdcb83451347edd2e89ccf05d0e5d"
+        },
+        {
+          "repeat": 8,
+          "elapsedMs": 0.08245799999986048,
+          "levels": 6,
+          "rootHash": "33aa7c16b8e7ef8cafa6e1f265fbf49377ccdcb83451347edd2e89ccf05d0e5d"
+        },
+        {
+          "repeat": 9,
+          "elapsedMs": 0.0742500000005748,
+          "levels": 6,
+          "rootHash": "33aa7c16b8e7ef8cafa6e1f265fbf49377ccdcb83451347edd2e89ccf05d0e5d"
+        }
+      ],
+      "elapsedMs": {
+        "count": 10,
+        "min": 0.0742500000005748,
+        "max": 0.7072079999998095,
+        "mean": 0.15148720000006505,
+        "median": 0.09035349999976461,
+        "p95": 0.4373956499997342,
+        "stddev": 0.1854505065566678
+      },
+      "levels": 6
+    },
+    {
+      "size": 128,
+      "runs": [
+        {
+          "repeat": 0,
+          "elapsedMs": 0.20062500000040018,
+          "levels": 7,
+          "rootHash": "1c6f87cbaa975435618991e09189beb09ef9549a61cefebddd94ab2a98b8d264"
+        },
+        {
+          "repeat": 1,
+          "elapsedMs": 0.15554100000008475,
+          "levels": 7,
+          "rootHash": "1c6f87cbaa975435618991e09189beb09ef9549a61cefebddd94ab2a98b8d264"
+        },
+        {
+          "repeat": 2,
+          "elapsedMs": 0.14766599999984464,
+          "levels": 7,
+          "rootHash": "1c6f87cbaa975435618991e09189beb09ef9549a61cefebddd94ab2a98b8d264"
+        },
+        {
+          "repeat": 3,
+          "elapsedMs": 0.14887500000077125,
+          "levels": 7,
+          "rootHash": "1c6f87cbaa975435618991e09189beb09ef9549a61cefebddd94ab2a98b8d264"
+        },
+        {
+          "repeat": 4,
+          "elapsedMs": 0.15483399999993708,
+          "levels": 7,
+          "rootHash": "1c6f87cbaa975435618991e09189beb09ef9549a61cefebddd94ab2a98b8d264"
+        },
+        {
+          "repeat": 5,
+          "elapsedMs": 0.15099999999983993,
+          "levels": 7,
+          "rootHash": "1c6f87cbaa975435618991e09189beb09ef9549a61cefebddd94ab2a98b8d264"
+        },
+        {
+          "repeat": 6,
+          "elapsedMs": 0.1561249999995198,
+          "levels": 7,
+          "rootHash": "1c6f87cbaa975435618991e09189beb09ef9549a61cefebddd94ab2a98b8d264"
+        },
+        {
+          "repeat": 7,
+          "elapsedMs": 0.7133750000002692,
+          "levels": 7,
+          "rootHash": "1c6f87cbaa975435618991e09189beb09ef9549a61cefebddd94ab2a98b8d264"
+        },
+        {
+          "repeat": 8,
+          "elapsedMs": 0.1461669999998776,
+          "levels": 7,
+          "rootHash": "1c6f87cbaa975435618991e09189beb09ef9549a61cefebddd94ab2a98b8d264"
+        },
+        {
+          "repeat": 9,
+          "elapsedMs": 0.15779199999997218,
+          "levels": 7,
+          "rootHash": "1c6f87cbaa975435618991e09189beb09ef9549a61cefebddd94ab2a98b8d264"
+        }
+      ],
+      "elapsedMs": {
+        "count": 10,
+        "min": 0.1461669999998776,
+        "max": 0.7133750000002692,
+        "mean": 0.21320000000005165,
+        "median": 0.15518750000001091,
+        "p95": 0.4826375000003276,
+        "stddev": 0.16738774968505674
+      },
+      "levels": 7
+    },
+    {
+      "size": 256,
+      "runs": [
+        {
+          "repeat": 0,
+          "elapsedMs": 0.3022499999997308,
+          "levels": 8,
+          "rootHash": "80b9a049c7d01373f754b10a6ae95c1cb7b7068dd3ec05f642417d5e23b3fae8"
+        },
+        {
+          "repeat": 1,
+          "elapsedMs": 0.29800000000068394,
+          "levels": 8,
+          "rootHash": "80b9a049c7d01373f754b10a6ae95c1cb7b7068dd3ec05f642417d5e23b3fae8"
+        },
+        {
+          "repeat": 2,
+          "elapsedMs": 0.30570799999986775,
+          "levels": 8,
+          "rootHash": "80b9a049c7d01373f754b10a6ae95c1cb7b7068dd3ec05f642417d5e23b3fae8"
+        },
+        {
+          "repeat": 3,
+          "elapsedMs": 0.9802500000005239,
+          "levels": 8,
+          "rootHash": "80b9a049c7d01373f754b10a6ae95c1cb7b7068dd3ec05f642417d5e23b3fae8"
+        },
+        {
+          "repeat": 4,
+          "elapsedMs": 0.3063750000001164,
+          "levels": 8,
+          "rootHash": "80b9a049c7d01373f754b10a6ae95c1cb7b7068dd3ec05f642417d5e23b3fae8"
+        },
+        {
+          "repeat": 5,
+          "elapsedMs": 0.3076250000003711,
+          "levels": 8,
+          "rootHash": "80b9a049c7d01373f754b10a6ae95c1cb7b7068dd3ec05f642417d5e23b3fae8"
+        },
+        {
+          "repeat": 6,
+          "elapsedMs": 0.300333999999566,
+          "levels": 8,
+          "rootHash": "80b9a049c7d01373f754b10a6ae95c1cb7b7068dd3ec05f642417d5e23b3fae8"
+        },
+        {
+          "repeat": 7,
+          "elapsedMs": 0.31970799999999144,
+          "levels": 8,
+          "rootHash": "80b9a049c7d01373f754b10a6ae95c1cb7b7068dd3ec05f642417d5e23b3fae8"
+        },
+        {
+          "repeat": 8,
+          "elapsedMs": 0.3015000000004875,
+          "levels": 8,
+          "rootHash": "80b9a049c7d01373f754b10a6ae95c1cb7b7068dd3ec05f642417d5e23b3fae8"
+        },
+        {
+          "repeat": 9,
+          "elapsedMs": 0.3164170000000013,
+          "levels": 8,
+          "rootHash": "80b9a049c7d01373f754b10a6ae95c1cb7b7068dd3ec05f642417d5e23b3fae8"
+        }
+      ],
+      "elapsedMs": {
+        "count": 10,
+        "min": 0.29800000000068394,
+        "max": 0.9802500000005239,
+        "mean": 0.373816700000134,
+        "median": 0.3060414999999921,
+        "p95": 0.6830061000002836,
+        "stddev": 0.20225027076239413
+      },
+      "levels": 8
+    },
+    {
+      "size": 512,
+      "runs": [
+        {
+          "repeat": 0,
+          "elapsedMs": 0.637416999999914,
+          "levels": 9,
+          "rootHash": "7a06e7cd495976db9ac04afbcaf02512088881a150d4bb63c7ece1d8f32726b3"
+        },
+        {
+          "repeat": 1,
+          "elapsedMs": 1.0851670000001832,
+          "levels": 9,
+          "rootHash": "7a06e7cd495976db9ac04afbcaf02512088881a150d4bb63c7ece1d8f32726b3"
+        },
+        {
+          "repeat": 2,
+          "elapsedMs": 0.483208999999988,
+          "levels": 9,
+          "rootHash": "7a06e7cd495976db9ac04afbcaf02512088881a150d4bb63c7ece1d8f32726b3"
+        },
+        {
+          "repeat": 3,
+          "elapsedMs": 1.3308749999996508,
+          "levels": 9,
+          "rootHash": "7a06e7cd495976db9ac04afbcaf02512088881a150d4bb63c7ece1d8f32726b3"
+        },
+        {
+          "repeat": 4,
+          "elapsedMs": 0.532709000000068,
+          "levels": 9,
+          "rootHash": "7a06e7cd495976db9ac04afbcaf02512088881a150d4bb63c7ece1d8f32726b3"
+        },
+        {
+          "repeat": 5,
+          "elapsedMs": 0.5036669999999503,
+          "levels": 9,
+          "rootHash": "7a06e7cd495976db9ac04afbcaf02512088881a150d4bb63c7ece1d8f32726b3"
+        },
+        {
+          "repeat": 6,
+          "elapsedMs": 1.1480829999991329,
+          "levels": 9,
+          "rootHash": "7a06e7cd495976db9ac04afbcaf02512088881a150d4bb63c7ece1d8f32726b3"
+        },
+        {
+          "repeat": 7,
+          "elapsedMs": 0.4924170000003869,
+          "levels": 9,
+          "rootHash": "7a06e7cd495976db9ac04afbcaf02512088881a150d4bb63c7ece1d8f32726b3"
+        },
+        {
+          "repeat": 8,
+          "elapsedMs": 0.5027920000002268,
+          "levels": 9,
+          "rootHash": "7a06e7cd495976db9ac04afbcaf02512088881a150d4bb63c7ece1d8f32726b3"
+        },
+        {
+          "repeat": 9,
+          "elapsedMs": 1.1655829999999696,
+          "levels": 9,
+          "rootHash": "7a06e7cd495976db9ac04afbcaf02512088881a150d4bb63c7ece1d8f32726b3"
+        }
+      ],
+      "elapsedMs": {
+        "count": 10,
+        "min": 0.483208999999988,
+        "max": 1.3308749999996508,
+        "mean": 0.7881918999999471,
+        "median": 0.585062999999991,
+        "p95": 1.2564935999997942,
+        "stddev": 0.32947750580694446
+      },
+      "levels": 9
+    },
+    {
+      "size": 1024,
+      "runs": [
+        {
+          "repeat": 0,
+          "elapsedMs": 0.9646249999996144,
+          "levels": 10,
+          "rootHash": "5bbd624e1397fb7d6d22c02851095362da70b932b4b08a21589f57a7a323887b"
+        },
+        {
+          "repeat": 1,
+          "elapsedMs": 1.0033750000002328,
+          "levels": 10,
+          "rootHash": "5bbd624e1397fb7d6d22c02851095362da70b932b4b08a21589f57a7a323887b"
+        },
+        {
+          "repeat": 2,
+          "elapsedMs": 1.6011250000001382,
+          "levels": 10,
+          "rootHash": "5bbd624e1397fb7d6d22c02851095362da70b932b4b08a21589f57a7a323887b"
+        },
+        {
+          "repeat": 3,
+          "elapsedMs": 1.8192499999995562,
+          "levels": 10,
+          "rootHash": "5bbd624e1397fb7d6d22c02851095362da70b932b4b08a21589f57a7a323887b"
+        },
+        {
+          "repeat": 4,
+          "elapsedMs": 0.9075420000008307,
+          "levels": 10,
+          "rootHash": "5bbd624e1397fb7d6d22c02851095362da70b932b4b08a21589f57a7a323887b"
+        },
+        {
+          "repeat": 5,
+          "elapsedMs": 0.926541000000725,
+          "levels": 10,
+          "rootHash": "5bbd624e1397fb7d6d22c02851095362da70b932b4b08a21589f57a7a323887b"
+        },
+        {
+          "repeat": 6,
+          "elapsedMs": 0.9462910000002012,
+          "levels": 10,
+          "rootHash": "5bbd624e1397fb7d6d22c02851095362da70b932b4b08a21589f57a7a323887b"
+        },
+        {
+          "repeat": 7,
+          "elapsedMs": 1.0117079999999987,
+          "levels": 10,
+          "rootHash": "5bbd624e1397fb7d6d22c02851095362da70b932b4b08a21589f57a7a323887b"
+        },
+        {
+          "repeat": 8,
+          "elapsedMs": 2.4032500000002983,
+          "levels": 10,
+          "rootHash": "5bbd624e1397fb7d6d22c02851095362da70b932b4b08a21589f57a7a323887b"
+        },
+        {
+          "repeat": 9,
+          "elapsedMs": 0.9126249999999345,
+          "levels": 10,
+          "rootHash": "5bbd624e1397fb7d6d22c02851095362da70b932b4b08a21589f57a7a323887b"
+        }
+      ],
+      "elapsedMs": {
+        "count": 10,
+        "min": 0.9075420000008307,
+        "max": 2.4032500000002983,
+        "mean": 1.249633200000153,
+        "median": 0.9839999999999236,
+        "p95": 2.1404499999999635,
+        "stddev": 0.4903395412840852
+      },
+      "levels": 10
+    }
+  ],
+  "proofReuseSimulation": {
+    "requests": 10000,
+    "uniqueCount": 5000,
+    "hits": 5000,
+    "misses": 5000,
+    "hitRate": 0.5,
+    "elapsedMs": 11.649709000000257,
+    "note": "This is an in-memory simulation of infoHash reuse semantics, not an on-chain gas measurement."
+  },
+  "concurrency": [
+    {
+      "concurrency": 1,
+      "pipelineCount": 6,
+      "proofCount": 18,
+      "wallMs": 697.6896250000009,
+      "throughputProofsPerSecond": 25.799437679756206,
+      "pipelineWallMs": {
+        "count": 6,
+        "min": 115.4033330000002,
+        "max": 117.3872909999991,
+        "mean": 116.26148583333315,
+        "median": 116.17389599999979,
+        "p95": 117.29070774999946,
+        "stddev": 0.7745914313444259
+      },
+      "generationMs": {
+        "count": 6,
+        "min": 86.62966699999924,
+        "max": 89.25774900000033,
+        "mean": 87.6817708333333,
+        "median": 87.33591700000034,
+        "p95": 89.11629075000019,
+        "stddev": 0.9711402689692168
+      },
+      "verificationMs": {
+        "count": 6,
+        "min": 26.748624999996537,
+        "max": 28.096125999999458,
+        "mean": 27.691083666665993,
+        "median": 27.82641700000113,
+        "p95": 28.045323749999397,
+        "stddev": 0.4350366005582739
+      },
+      "allVerified": true
+    },
+    {
+      "concurrency": 2,
+      "pipelineCount": 6,
+      "proofCount": 18,
+      "wallMs": 632.8424999999988,
+      "throughputProofsPerSecond": 28.443096031003027,
+      "pipelineWallMs": {
+        "count": 6,
+        "min": 183.76733299999978,
+        "max": 216.1487500000003,
+        "mean": 206.7492984999999,
+        "median": 211.9859580000002,
+        "p95": 215.77322924999999,
+        "stddev": 11.236248630022336
+      },
+      "generationMs": {
+        "count": 6,
+        "min": 137.3692090000004,
+        "max": 185.8366249999999,
+        "mean": 171.75278483333295,
+        "median": 177.9580204999993,
+        "p95": 185.31518749999987,
+        "stddev": 16.631487691446786
+      },
+      "verificationMs": {
+        "count": 6,
+        "min": 27.7534169999999,
+        "max": 46.33087399999931,
+        "mean": 34.180083000001105,
+        "median": 28.766187000001082,
+        "p95": 46.11154075000013,
+        "stddev": 8.30448767061109
+      },
+      "allVerified": true
+    },
+    {
+      "concurrency": 4,
+      "pipelineCount": 6,
+      "proofCount": 18,
+      "wallMs": 590.1788749999996,
+      "throughputProofsPerSecond": 30.49922788239415,
+      "pipelineWallMs": {
+        "count": 6,
+        "min": 210.2063330000001,
+        "max": 386.13666699999885,
+        "mean": 320.69952083333345,
+        "median": 348.25779150000017,
+        "p95": 385.3725209999993,
+        "stddev": 69.69695192328004
+      },
+      "generationMs": {
+        "count": 6,
+        "min": 180.92883400000028,
+        "max": 305.0065000000013,
+        "mean": 247.22090266666723,
+        "median": 250.71285350000016,
+        "p95": 298.25423950000095,
+        "stddev": 42.01288815074139
+      },
+      "verificationMs": {
+        "count": 6,
+        "min": 28.42449999999917,
+        "max": 109.16387500000201,
+        "mean": 72.78331266666616,
+        "median": 84.26118749999932,
+        "p95": 107.18484375000116,
+        "stddev": 32.342582831357504
+      },
+      "allVerified": true
+    }
+  ],
+  "interpretationBoundaries": {
+    "aggregationType": "batching/orchestration aggregation over metadata hashes",
+    "cryptographicAggregationImplemented": false,
+    "recursiveVerificationImplemented": false,
+    "liveOracleCircuits": [
+      "FuelUse"
+    ],
+    "benchmarkOnlyCircuits": [
+      "PM10",
+      "CO2eq"
+    ]
+  }
+}
